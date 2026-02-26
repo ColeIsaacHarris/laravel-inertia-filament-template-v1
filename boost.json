@@ -1,16 +1,21 @@
 {
     "agents": [
         "claude_code",
-        "copilot",
-        "cursor"
-    ],
-    "editors": [
-        "claude_code",
         "cursor",
-        "vscode"
+        "copilot"
     ],
-    "guidelines": [
+    "guidelines": true,
+    "herd_mcp": true,
+    "mcp": true,
+    "packages": [
         "laravel/fortify"
     ],
-    "herd_mcp": true
+    "sail": false,
+    "skills": [
+        "wayfinder-development",
+        "pest-testing",
+        "inertia-react-development",
+        "tailwindcss-development",
+        "developing-with-fortify"
+    ]
 }
