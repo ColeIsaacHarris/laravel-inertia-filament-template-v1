@@ -54,7 +54,7 @@ The natural stone distribution industry faces unique challenges not adequately a
 - **Hold Management:** Sophisticated reservation system with time limits, deposits, and status tracking
 - **Customer Intelligence:** CRM tailored to stone industry customer types and buying patterns
 - **Multi-Location Support:** Manage inventory across multiple warehouses and consignment locations
-- **Customer Dashboard:** Dedicated customer dashboard for managing holds, communicating with wholesaler, viewing inventory, and more...
+- **Customer Dashboard:** Dedicated customer dashboard supporting order-management and communication features
 
 ---
 
@@ -77,10 +77,11 @@ EarthWare is built as a modern single-page application (SPA) utilizing the Larav
 | Search             | Laravel Scout + Typesense                        | Fast full-text search                       |
 | File Storage       | S3-compatible                                    | Slab images, documents                      |
 | PDF Generation     | Gotenberg + gotenberg-php                        | Document generation                         |
+| Multi-Tenancy      | Tenancy for Laravel (stancl/tenancy)             | Facilitate multi-tenant data isolation      |
 
 ### 2.2 Core Modules Overview
 
-The platform consists of eight core modules that work together to provide comprehensive business management capabilities:
+The platform consists of eight core modules(domains) that work together to provide comprehensive business management capabilities:
 
 | Module                | Primary Function          | Key Features                                             |
 |-----------------------|---------------------------|----------------------------------------------------------|
