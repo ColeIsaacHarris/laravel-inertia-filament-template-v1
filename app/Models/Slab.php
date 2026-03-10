@@ -13,4 +13,6 @@ class Slab extends Model
     /** @var array<string> */
     protected $fillable = [
     ];
+
+    public function getSlabState(): null {}
 }
