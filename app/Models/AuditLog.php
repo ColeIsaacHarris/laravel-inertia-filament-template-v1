@@ -18,8 +18,6 @@ class AuditLog extends Model
 
     protected $table = 'audit_log';
 
-    protected $primaryKey = 'uuid';
-
     /** @var array<string> */
     protected $fillable = [
     ];

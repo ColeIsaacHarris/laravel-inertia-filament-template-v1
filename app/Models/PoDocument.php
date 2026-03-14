@@ -12,8 +12,6 @@ class PoDocument extends Model
 
     public $timestamps = false;
 
-    protected $primaryKey = 'uuid';
-
     /** @var array<string> */
     protected $fillable = [
     ];

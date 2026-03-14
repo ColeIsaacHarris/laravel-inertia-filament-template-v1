@@ -50,5 +50,5 @@ it('filters holds by state using whereState scope', function () {
     $results = Hold::whereState('status', Expired::class)->get();
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()->uuid)->toBe($expired->uuid);
+        ->and($results->first()->id)->toBe($expired->id);
 });

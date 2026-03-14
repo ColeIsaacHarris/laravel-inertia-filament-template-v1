@@ -16,8 +16,6 @@ class QuoteItem extends Model
 
     const UPDATED_AT = null;
 
-    protected $primaryKey = 'uuid';
-
     /** @var array<string> */
     protected $fillable = [
     ];

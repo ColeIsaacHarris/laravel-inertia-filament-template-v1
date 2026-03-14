@@ -19,8 +19,6 @@ class HoldRequest extends Model
     use HasStates;
     use HasUuids;
 
-    protected $primaryKey = 'uuid';
-
     public const UPDATED_AT = null;
 
     /** @var array<string> */

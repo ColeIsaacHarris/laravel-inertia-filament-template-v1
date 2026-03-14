@@ -61,5 +61,5 @@ it('filters containers by state using whereState scope', function () {
     $results = Container::whereState('container_status', Loaded::class)->get();
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()->uuid)->toBe($loaded->uuid);
+        ->and($results->first()->id)->toBe($loaded->id);
 });

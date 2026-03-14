@@ -58,5 +58,5 @@ it('filters invoices by state using whereState scope', function () {
     $results = Invoice::whereState('status', Issued::class)->get();
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()->uuid)->toBe($issued->uuid);
+        ->and($results->first()->id)->toBe($issued->id);
 });

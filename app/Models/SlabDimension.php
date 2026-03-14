@@ -15,8 +15,6 @@ class SlabDimension extends Model
 
     use HasUuids;
 
-    protected $primaryKey = 'uuid';
-
     public $timestamps = false;
 
     /** @var array<string> */

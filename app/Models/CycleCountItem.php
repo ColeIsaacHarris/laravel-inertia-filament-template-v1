@@ -14,8 +14,6 @@ class CycleCountItem extends Model
 
     use HasUuids;
 
-    protected $primaryKey = 'uuid';
-
     public const UPDATED_AT = null;
 
     /** @var array<string> */

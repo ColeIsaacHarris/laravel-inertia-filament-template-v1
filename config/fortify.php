@@ -101,7 +101,11 @@ return [
     |
     */
 
-    'middleware' => ['web'],
+    'middleware' => array_filter([
+        'web',
+        env('TENANCY_TESTING') ? null : Stancl\Tenancy\Middleware\InitializeTenancyBySubdomain::class,
+        env('TENANCY_TESTING') ? null : Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains::class,
+    ]),
 
     /*
     |--------------------------------------------------------------------------

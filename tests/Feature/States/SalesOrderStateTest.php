@@ -60,5 +60,5 @@ it('filters sales orders by state using whereState scope', function () {
     $results = SalesOrder::whereState('status', Confirmed::class)->get();
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()->uuid)->toBe($confirmed->uuid);
+        ->and($results->first()->id)->toBe($confirmed->id);
 });

@@ -100,7 +100,8 @@ class TenancyServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->bootEvents();
-        $this->mapRoutes();
+        // Routing is handled via Method 2 in bootstrap/app.php
+        // $this->mapRoutes();
 
         $this->makeTenancyMiddlewareHighestPriority();
     }

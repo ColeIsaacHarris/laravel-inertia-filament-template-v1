@@ -16,8 +16,6 @@ class MessageThread extends Model
 
     use HasUuids;
 
-    protected $primaryKey = 'uuid';
-
     /** @var array<string> */
     protected $fillable = [
     ];

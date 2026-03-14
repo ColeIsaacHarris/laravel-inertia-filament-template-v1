@@ -26,6 +26,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureDefaults();
+
+        if (app()->environment('testing')) {
+            $this->loadMigrationsFrom(database_path('migrations/tenant'));
+        }
     }
 
     protected function configureDefaults(): void

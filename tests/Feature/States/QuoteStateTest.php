@@ -54,5 +54,5 @@ it('filters quotes by state using whereState scope', function () {
     $results = Quote::whereState('status', Sent::class)->get();
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()->uuid)->toBe($sent->uuid);
+        ->and($results->first()->id)->toBe($sent->id);
 });

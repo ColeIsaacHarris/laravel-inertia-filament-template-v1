@@ -69,5 +69,5 @@ it('filters slabs by state using whereState scope', function () {
     $results = Slab::whereState('status', Available::class)->get();
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()->uuid)->toBe($available->uuid);
+        ->and($results->first()->id)->toBe($available->id);
 });

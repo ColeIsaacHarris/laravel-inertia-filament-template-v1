@@ -19,8 +19,6 @@ class Quote extends Model
     use HasStates;
     use HasUuids;
 
-    protected $primaryKey = 'uuid';
-
     /** @var array<string> */
     protected $fillable = [
     ];

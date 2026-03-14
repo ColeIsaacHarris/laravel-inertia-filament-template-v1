@@ -16,8 +16,6 @@ class PortalNotification extends Model
 
     protected $table = 'notifications';
 
-    protected $primaryKey = 'uuid';
-
     public const UPDATED_AT = null;
 
     /** @var array<string> */

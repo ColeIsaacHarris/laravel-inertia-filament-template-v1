@@ -57,5 +57,5 @@ it('filters purchase orders by state using whereState scope', function () {
     $results = PurchaseOrder::whereState('status', Submitted::class)->get();
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()->uuid)->toBe($submitted->uuid);
+        ->and($results->first()->id)->toBe($submitted->id);
 });

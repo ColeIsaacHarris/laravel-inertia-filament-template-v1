@@ -49,5 +49,5 @@ it('filters hold requests by state using whereState scope', function () {
     $results = HoldRequest::whereState('status', Approved::class)->get();
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()->uuid)->toBe($approved->uuid);
+        ->and($results->first()->id)->toBe($approved->id);
 });

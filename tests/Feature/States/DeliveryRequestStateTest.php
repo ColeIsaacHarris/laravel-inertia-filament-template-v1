@@ -56,5 +56,5 @@ it('filters delivery requests by state using whereState scope', function () {
     $results = DeliveryRequest::whereState('status', Confirmed::class)->get();
 
     expect($results)->toHaveCount(1)
-        ->and($results->first()->uuid)->toBe($confirmed->uuid);
+        ->and($results->first()->id)->toBe($confirmed->id);
 });
