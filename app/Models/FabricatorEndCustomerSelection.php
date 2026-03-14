@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class FabricatorEndCustomerSelection extends Model
+{
+    use HasUuids;
+
+    protected $primaryKey = 'uuid';
+
+    public const UPDATED_AT = null;
+
+    /** @var array<string> */
+    protected $fillable = [
+    ];
+
+    public function fabricator(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class, 'fabricator_id');
+    }
+
+    public function portalUser(): BelongsTo
+    {
+        return $this->belongsTo(PortalUser::class);
+    }
+
+    public function slab(): BelongsTo
+    {
+        return $this->belongsTo(Slab::class);
+    }
+}

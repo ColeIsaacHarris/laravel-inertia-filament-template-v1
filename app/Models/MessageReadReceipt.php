@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
+class MessageReadReceipt extends Model
+{
+    use HasUuids;
+
+    protected $primaryKey = 'uuid';
+
+    public $timestamps = false;
+
+    /** @var array<string> */
+    protected $fillable = [
+    ];
+
+    /** @return array<string, string> */
+    protected function casts(): array
+    {
+        return [
+            'read_at' => 'datetime',
+        ];
+    }
+
+    public function message(): BelongsTo
+    {
+        return $this->belongsTo(Message::class);
+    }
+
+    public function readerPortalUser(): BelongsTo
+    {
+        return $this->belongsTo(PortalUser::class, 'reader_portal_user_id');
+    }
+
+    public function readerUser(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'reader_user_id');
+    }
+}

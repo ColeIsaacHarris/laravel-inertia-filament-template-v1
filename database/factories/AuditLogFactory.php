@@ -1,0 +1,28 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AuditLog>
+ */
+class AuditLogFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'action' => fake()->randomElement(['create', 'update', 'delete']),
+            'entity_type' => fake()->randomElement(['slab', 'customer', 'order']),
+            'entity_id' => fake()->uuid(),
+            'old_values' => [],
+            'new_values' => ['field' => 'value'],
+            'ip_address' => fake()->ipv4(),
+        ];
+    }
+}
