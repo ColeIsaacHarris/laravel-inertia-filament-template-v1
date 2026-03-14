@@ -1,6 +1,5 @@
 <?php
 
-use App\Enums\SlabStatus;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -30,7 +29,7 @@ return new class extends Migration
             $table->string('quality_grade'); /* references QualityGrade enum */
             $table->char('origin_country_code', 2)->nullable(); /* iso 3166 alpha-2 */
             $table->string('quarry_name')->nullable();
-            $table->string('status')->default(SlabStatus::IN_TRANSIT->value);
+            $table->string('status')->default('in_transit');
 
             // Financial — all in cents
             $table->bigInteger('fob_cost_cents')->default(0);

@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Enums\QualityGrade;
+use App\Enums\SlabFinish;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,8 @@ class SlabFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'finish' => fake()->randomElement(SlabFinish::cases())->value,
+            'quality_grade' => fake()->randomElement(QualityGrade::cases())->value,
         ];
     }
 }
