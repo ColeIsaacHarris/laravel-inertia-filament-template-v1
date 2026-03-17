@@ -43,7 +43,9 @@ class AppServiceProvider extends ServiceProvider
         Model::shouldBeStrict();
         Model::unguard();
 
-        URL::forceScheme('https');
+        if (app()->isProduction()) {
+            URL::forceScheme('https');
+        }
 
         Password::defaults(fn (): ?Password => app()->isProduction()
             ? Password::min(12)
