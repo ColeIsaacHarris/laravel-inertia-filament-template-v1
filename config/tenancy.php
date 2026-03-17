@@ -189,7 +189,7 @@ return [
         // Bootstrappers\BroadcastChannelPrefixBootstrapper::class,
 
         // Integration bootstrappers
-        // Bootstrappers\Integrations\FortifyRouteBootstrapper::class,
+        Bootstrappers\Integrations\FortifyRouteBootstrapper::class,
         // Bootstrappers\Integrations\ScoutPrefixBootstrapper::class,
 
         // Bootstrappers\PostgresRLSBootstrapper::class,
