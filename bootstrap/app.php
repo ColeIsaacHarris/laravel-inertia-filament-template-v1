@@ -13,21 +13,30 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         commands: __DIR__.'/../routes/console.php',
-        health: '/up',
         using: function () {
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
+            $centralDomains = config('tenancy.identification.central_domains');
 
-            $tenantMiddleware = env('TENANCY_TESTING')
-                ? ['web']
-                : [
-                    'web',
-                    InitializeTenancyBySubdomain::class,
-                    PreventAccessFromCentralDomains::class,
-                ];
+            foreach ($centralDomains as $domain) {
+                Route::middleware('web')
+                    ->domain($domain)
+                    ->group(base_path('routes/web.php'));
+            }
 
-            Route::middleware($tenantMiddleware)
-                ->group(base_path('routes/tenant.php'));
+            Route::middleware('tenant')->group(base_path('routes/tenant.php'));
+            
+            // Route::middleware('web')
+            //     ->group(base_path('routes/web.php'));
+
+            // $tenantMiddleware = env('TENANCY_TESTING')
+            //     ? ['web']
+            //     : [
+            //         'web',
+            //         InitializeTenancyBySubdomain::class,
+            //         PreventAccessFromCentralDomains::class,
+            //     ];
+
+            // Route::middleware($tenantMiddleware)
+            //     ->group(base_path('routes/tenant.php'));
         },
     )
     ->withMiddleware(function (Middleware $middleware): void {

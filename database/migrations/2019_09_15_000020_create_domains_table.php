@@ -2,11 +2,12 @@
 
 declare(strict_types=1);
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Stancl\Tenancy\Tenancy;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-class CreateDomainsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -18,10 +19,10 @@ class CreateDomainsTable extends Migration
         Schema::create('domains', function (Blueprint $table) {
             $table->increments('id');
             $table->string('domain', 255)->unique();
-            $table->string('tenant_id');
+            $table->string(Tenancy::tenantKeyColumn())->comment('no-rls');
 
             $table->timestamps();
-            $table->foreign('tenant_id')->references('id')->on('tenants')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign(Tenancy::tenantKeyColumn())->references('id')->on('tenants')->onUpdate('cascade');
         });
     }
 
@@ -34,4 +35,4 @@ class CreateDomainsTable extends Migration
     {
         Schema::dropIfExists('domains');
     }
-}
+};

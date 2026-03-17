@@ -16,7 +16,7 @@
         "laravel/tinker": "^2.10.1",
         "laravel/wayfinder": "^0.1.9",
         "spatie/laravel-model-states": "^2.13",
-        "stancl/tenancy": "@dev"
+        "stancl/tenancy": "dev-master"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -104,6 +104,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }

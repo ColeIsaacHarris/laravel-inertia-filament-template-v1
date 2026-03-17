@@ -1,0 +1,1 @@
+ALTER USER sail CREATEDB;
