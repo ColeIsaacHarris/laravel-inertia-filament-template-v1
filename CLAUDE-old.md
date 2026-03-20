@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <laravel-boost-guidelines>
 === foundation rules ===
 
@@ -10,7 +9,7 @@ The Laravel Boost guidelines are specifically curated by Laravel maintainers for
 
 This application is a Laravel application and its main Laravel ecosystems package & versions are below. You are an expert with them all. Ensure you abide by these specific packages & versions.
 
-- php - 8.4.19
+- php - 8.4.18
 - inertiajs/inertia-laravel (INERTIA_LARAVEL) - v2
 - laravel/fortify (FORTIFY) - v1
 - laravel/framework (LARAVEL) - v12
@@ -305,14 +304,3 @@ Wayfinder generates TypeScript functions for Laravel routes. Import from `@/acti
 - IMPORTANT: Activate `developing-with-fortify` skill when working with Fortify authentication features.
 
 </laravel-boost-guidelines>
-=======
-When contributing to this codebase there are a few key points to be aware of and conventions you should follow:
-
-- This project uses stancl/tenancy to enable multi-tenancy with a "one database per tenant" approach. It's important to be mindful of this fact when implementing code to ensure that tenant scope is respected and that code is correctly divided between the "central" and "tenant" domains. 
-- This project follows various widely-adopted but technically "non-standard" Laravel conventions which should be adhered to when appropriate. These include: 
-    - `DTOs` via the spatie/laravel-data package
-    - `View Models` for transforming and passing data to "views" (ie. Inertia components/pages)
-    - `Actions` which are used to keep models and controllers "thin" and free of "business logic"
-- The filamentphp/filament package is installed but should not be used outside of the "central" /admin routes.
-- The primary per-tenant app uses react-aria-components which are styled in accordance to the project's design system. 
->>>>>>> 23f26d0 (Update CLAUDE.md)
