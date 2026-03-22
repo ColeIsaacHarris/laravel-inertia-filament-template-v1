@@ -5,8 +5,6 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Stancl\Tenancy\Middleware;
-use Laravel\Fortify\Features;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -27,8 +25,9 @@ Route::middleware([
     Middleware\ScopeSessions::class,
 ])->group(function () {
     Route::get('/', function () {
-        return Inertia::render('welcome', [
-        'canRegister' => Features::enabled(Features::registration()),
-        ]);
+        return Inertia::render('welcome');
     });
+
+    // Fortify auth routes (tenant context only)
+    require base_path('vendor/laravel/fortify/routes/routes.php');
 });
