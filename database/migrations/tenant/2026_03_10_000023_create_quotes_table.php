@@ -22,8 +22,12 @@ return new class extends Migration
             $table->string('payment_terms')->nullable();
             $table->text('notes')->nullable();
             $table->text('terms_text')->nullable();
-            $table->foreignUuid('previous_version_id')->nullable()->constrained('quotes')->nullOnDelete();
+            $table->uuid('previous_version_id')->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('quotes', function (Blueprint $table) {
+            $table->foreign('previous_version_id')->references('id')->on('quotes')->nullOnDelete();
         });
     }
 

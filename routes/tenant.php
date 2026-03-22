@@ -24,9 +24,9 @@ Route::middleware([
     Middleware\PreventAccessFromUnwantedDomains::class,
     Middleware\ScopeSessions::class,
 ])->group(function () {
-    Route::get('/', function () {
-        return Inertia::render('welcome');
-    });
+    // Route::get('/', function () {
+    //     return Inertia::render('welcome');
+    // });
 
     // Fortify auth routes (tenant context only)
     require base_path('vendor/laravel/fortify/routes/routes.php');
