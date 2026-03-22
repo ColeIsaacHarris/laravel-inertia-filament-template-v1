@@ -26,8 +26,8 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('admin')
-            ->domain(config('tenancy.identification.central_domains.0'))
+            ->path('')
+            ->domain(config('app.admin_domain'))
             ->login()
             ->authGuard('admin')
             ->colors([

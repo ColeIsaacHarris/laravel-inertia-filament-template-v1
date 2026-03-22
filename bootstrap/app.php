@@ -15,8 +15,13 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         using: function () {
             $centralDomains = config('tenancy.identification.central_domains');
+            // $adminDomain = config('app.admin_domain');
 
             foreach ($centralDomains as $domain) {
+                // if ($domain === $adminDomain) {
+                //     continue;
+                // }
+
                 Route::middleware('web')
                     ->domain($domain)
                     ->group(base_path('routes/web.php'));

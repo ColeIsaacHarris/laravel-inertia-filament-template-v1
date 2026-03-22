@@ -63,9 +63,10 @@ return [
          *
          * Only relevant if you're using the domain or subdomain identification middleware.
          */
-        'central_domains' => [
+        'central_domains' => array_filter([
             str(env('APP_URL'))->after('://')->before('/')->before(':')->toString(),
-        ],
+            env('ADMIN_DOMAIN'),
+        ]),
 
         /**
          * The default middleware used for tenant identification.
