@@ -3,10 +3,11 @@
 namespace Database\Factories;
 
 use App\Enums\ContainerSize;
+use App\Models\Container;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Container>
+ * @extends Factory<Container>
  */
 class ContainerFactory extends Factory
 {

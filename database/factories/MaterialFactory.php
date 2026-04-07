@@ -4,10 +4,11 @@ namespace Database\Factories;
 
 use App\Enums\ColorFamily;
 use App\Enums\MaterialType;
+use App\Models\Material;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Material>
+ * @extends Factory<Material>
  */
 class MaterialFactory extends Factory
 {

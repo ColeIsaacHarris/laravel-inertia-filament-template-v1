@@ -3,10 +3,11 @@
 namespace Database\Factories;
 
 use App\Enums\MovementType;
+use App\Models\InventoryMovement;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\InventoryMovement>
+ * @extends Factory<InventoryMovement>
  */
 class InventoryMovementFactory extends Factory
 {

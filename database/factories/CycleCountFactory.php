@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\CycleCount;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\CycleCount>
+ * @extends Factory<CycleCount>
  */
 class CycleCountFactory extends Factory
 {

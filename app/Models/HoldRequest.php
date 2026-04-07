@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\HoldType;
 use App\States\HoldRequest\HoldRequestState;
+use Database\Factories\HoldRequestFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +14,7 @@ use Spatie\ModelStates\HasStates;
 
 class HoldRequest extends Model
 {
-    /** @use HasFactory<\Database\Factories\HoldRequestFactory> */
+    /** @use HasFactory<HoldRequestFactory> */
     use HasFactory;
 
     use HasStates;

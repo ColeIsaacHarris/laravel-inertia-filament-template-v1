@@ -1,19 +1,19 @@
-import InputError from '@/components/input-error';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Button } from '@/common/components/button';
+import { InputError } from '@/common/components/input-error';
 import {
     InputOTP,
     InputOTPGroup,
     InputOTPSlot,
-} from '@/components/ui/input-otp';
-import { OTP_MAX_LENGTH } from '@/hooks/use-two-factor-auth';
-import AuthLayout from '@/layouts/auth-layout';
+} from '@/common/components/input-otp';
+import { Input } from '@/common/components/text-field';
+import { AuthLayout } from '@/modules/auth/layouts/auth-layout';
+import { OTP_MAX_LENGTH } from '@/modules/two-factor/hooks/use-two-factor-auth';
 import { store } from '@/routes/two-factor/login';
 import { Form, Head } from '@inertiajs/react';
 import { REGEXP_ONLY_DIGITS } from 'input-otp';
 import { useMemo, useState } from 'react';
 
-export default function TwoFactorChallenge() {
+export default function TwoFactorChallengePage() {
     const [showRecoveryInput, setShowRecoveryInput] = useState<boolean>(false);
     const [code, setCode] = useState<string>('');
 
@@ -105,7 +105,8 @@ export default function TwoFactorChallenge() {
                             <Button
                                 type="submit"
                                 className="w-full"
-                                disabled={processing}
+                                isPending={processing}
+                                isDisabled={processing}
                             >
                                 Continue
                             </Button>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\ColorFamily;
 use App\Enums\MaterialType;
+use Database\Factories\MaterialFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Material extends Model
 {
-    /** @use HasFactory<\Database\Factories\MaterialFactory> */
+    /** @use HasFactory<MaterialFactory> */
     use HasFactory;
 
     use HasUuids;

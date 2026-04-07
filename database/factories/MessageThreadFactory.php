@@ -3,10 +3,11 @@
 namespace Database\Factories;
 
 use App\Enums\ThreadType;
+use App\Models\MessageThread;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MessageThread>
+ * @extends Factory<MessageThread>
  */
 class MessageThreadFactory extends Factory
 {

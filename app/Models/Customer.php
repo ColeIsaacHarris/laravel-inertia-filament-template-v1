@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\CustomerTier;
 use App\Enums\CustomerType;
 use App\Enums\PaymentTerms;
+use Database\Factories\CustomerFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +14,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Customer extends Model
 {
-    /** @use HasFactory<\Database\Factories\CustomerFactory> */
+    /** @use HasFactory<CustomerFactory> */
     use HasFactory;
 
     use HasUuids;

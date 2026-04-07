@@ -1,14 +1,17 @@
 <?php
 
-test('registration route does not exist when registration is disabled', function () {
-    $this->get('/register')->assertNotFound();
+test('registration screen can be rendered', function () {
+    $this->get('/register')->assertOk();
 });
 
-test('registration submission returns not found when registration is disabled', function () {
-    $this->post('/register', [
+test('new users can register', function () {
+    $response = $this->post('/register', [
         'name' => 'Test User',
         'email' => 'test@example.com',
         'password' => 'password',
         'password_confirmation' => 'password',
-    ])->assertNotFound();
+    ]);
+
+    $this->assertAuthenticated();
+    $response->assertRedirect(route('dashboard', absolute: false));
 });

@@ -5,10 +5,11 @@ namespace Database\Factories;
 use App\Enums\DepositStatus;
 use App\Enums\HoldType;
 use App\Models\Customer;
+use App\Models\Hold;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Hold>
+ * @extends Factory<Hold>
  */
 class HoldFactory extends Factory
 {

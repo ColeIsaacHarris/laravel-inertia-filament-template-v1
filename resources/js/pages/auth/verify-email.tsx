@@ -1,13 +1,11 @@
-// Components
-import TextLink from '@/components/text-link';
-import { Button } from '@/components/ui/button';
-import { Spinner } from '@/components/ui/spinner';
-import AuthLayout from '@/layouts/auth-layout';
+import { Button } from '@/common/components/button';
+import { TextLink } from '@/common/components/text-link';
+import { AuthLayout } from '@/modules/auth/layouts/auth-layout';
 import { logout } from '@/routes';
 import { send } from '@/routes/verification';
 import { Form, Head } from '@inertiajs/react';
 
-export default function VerifyEmail({ status }: { status?: string }) {
+export default function VerifyEmailPage({ status }: { status?: string }) {
     return (
         <AuthLayout
             title="Verify email"
@@ -25,8 +23,11 @@ export default function VerifyEmail({ status }: { status?: string }) {
             <Form {...send.form()} className="space-y-6 text-center">
                 {({ processing }) => (
                     <>
-                        <Button disabled={processing} variant="secondary">
-                            {processing && <Spinner />}
+                        <Button
+                            isPending={processing}
+                            isDisabled={processing}
+                            variant="secondary"
+                        >
                             Resend verification email
                         </Button>
 

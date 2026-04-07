@@ -1,16 +1,15 @@
 import ProfileController from '@/actions/App/Http/Controllers/Settings/ProfileController';
-import DeleteUser from '@/components/delete-user';
-import Heading from '@/components/heading';
-import InputError from '@/components/input-error';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import AppLayout from '@/layouts/app-layout';
-import SettingsLayout from '@/layouts/settings/layout';
+import { Button } from '@/common/components/button';
+import { Heading } from '@/common/components/heading';
+import { InputError } from '@/common/components/input-error';
+import { Input, Label } from '@/common/components/text-field';
+import type { BreadcrumbItem } from '@/common/types/navigation';
+import type { SharedData } from '@/common/types/shared-data';
+import { AppLayout } from '@/modules/app-shell/layouts/app-layout';
+import { DeleteUser } from '@/modules/settings/components/delete-user';
+import { SettingsLayout } from '@/modules/settings/layouts/settings-layout';
 import { edit } from '@/routes/profile';
 import { send } from '@/routes/verification';
-import type { BreadcrumbItem, SharedData } from '@/types';
-import { Transition } from '@headlessui/react';
 import { Form, Head, Link, usePage } from '@inertiajs/react';
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -20,7 +19,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function Profile({
+export default function ProfilePage({
     mustVerifyEmail,
     status,
 }: {
@@ -120,23 +119,20 @@ export default function Profile({
 
                                 <div className="flex items-center gap-4">
                                     <Button
-                                        disabled={processing}
+                                        isDisabled={processing}
                                         data-test="update-profile-button"
                                     >
                                         Save
                                     </Button>
 
-                                    <Transition
-                                        show={recentlySuccessful}
-                                        enter="transition ease-in-out"
-                                        enterFrom="opacity-0"
-                                        leave="transition ease-in-out"
-                                        leaveTo="opacity-0"
+                                    <p
+                                        className="text-sm text-neutral-600 transition-opacity ease-in-out"
+                                        style={{
+                                            opacity: recentlySuccessful ? 1 : 0,
+                                        }}
                                     >
-                                        <p className="text-sm text-neutral-600">
-                                            Saved
-                                        </p>
-                                    </Transition>
+                                        Saved
+                                    </p>
                                 </div>
                             </>
                         )}

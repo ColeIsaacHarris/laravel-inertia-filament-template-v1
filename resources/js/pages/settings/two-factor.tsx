@@ -1,13 +1,13 @@
-import Heading from '@/components/heading';
-import TwoFactorRecoveryCodes from '@/components/two-factor-recovery-codes';
-import TwoFactorSetupModal from '@/components/two-factor-setup-modal';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { useTwoFactorAuth } from '@/hooks/use-two-factor-auth';
-import AppLayout from '@/layouts/app-layout';
-import SettingsLayout from '@/layouts/settings/layout';
+import { Badge } from '@/common/components/badge';
+import { Button } from '@/common/components/button';
+import { Heading } from '@/common/components/heading';
+import type { BreadcrumbItem } from '@/common/types/navigation';
+import { AppLayout } from '@/modules/app-shell/layouts/app-layout';
+import { SettingsLayout } from '@/modules/settings/layouts/settings-layout';
+import { TwoFactorRecoveryCodes } from '@/modules/two-factor/components/two-factor-recovery-codes';
+import { TwoFactorSetupModal } from '@/modules/two-factor/components/two-factor-setup-modal';
+import { useTwoFactorAuth } from '@/modules/two-factor/hooks/use-two-factor-auth';
 import { disable, enable, show } from '@/routes/two-factor';
-import type { BreadcrumbItem } from '@/types';
 import { Form, Head } from '@inertiajs/react';
 import { ShieldBan, ShieldCheck } from 'lucide-react';
 import { useState } from 'react';
@@ -24,7 +24,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function TwoFactor({
+export default function TwoFactorPage({
     requiresConfirmation = false,
     twoFactorEnabled = false,
 }: Props) {
@@ -75,7 +75,7 @@ export default function TwoFactor({
                                         <Button
                                             variant="destructive"
                                             type="submit"
-                                            disabled={processing}
+                                            isDisabled={processing}
                                         >
                                             <ShieldBan /> Disable 2FA
                                         </Button>
@@ -96,7 +96,7 @@ export default function TwoFactor({
                             <div>
                                 {hasSetupData ? (
                                     <Button
-                                        onClick={() => setShowSetupModal(true)}
+                                        onPress={() => setShowSetupModal(true)}
                                     >
                                         <ShieldCheck />
                                         Continue Setup
@@ -111,7 +111,7 @@ export default function TwoFactor({
                                         {({ processing }) => (
                                             <Button
                                                 type="submit"
-                                                disabled={processing}
+                                                isDisabled={processing}
                                             >
                                                 <ShieldCheck />
                                                 Enable 2FA

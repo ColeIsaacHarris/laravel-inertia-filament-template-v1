@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\CreditMemo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\CreditMemo>
+ * @extends Factory<CreditMemo>
  */
 class CreditMemoFactory extends Factory
 {

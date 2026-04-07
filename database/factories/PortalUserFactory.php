@@ -3,10 +3,11 @@
 namespace Database\Factories;
 
 use App\Enums\PortalRole;
+use App\Models\PortalUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PortalUser>
+ * @extends Factory<PortalUser>
  */
 class PortalUserFactory extends Factory
 {

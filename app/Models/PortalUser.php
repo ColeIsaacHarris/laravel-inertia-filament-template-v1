@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\PortalRole;
+use Database\Factories\PortalUserFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class PortalUser extends Model
 {
-    /** @use HasFactory<\Database\Factories\PortalUserFactory> */
+    /** @use HasFactory<PortalUserFactory> */
     use HasFactory;
 
     use HasUuids;

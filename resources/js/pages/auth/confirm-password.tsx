@@ -1,13 +1,11 @@
-import InputError from '@/components/input-error';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Spinner } from '@/components/ui/spinner';
-import AuthLayout from '@/layouts/auth-layout';
+import { Button } from '@/common/components/button';
+import { InputError } from '@/common/components/input-error';
+import { Input, Label } from '@/common/components/text-field';
+import { AuthLayout } from '@/modules/auth/layouts/auth-layout';
 import { store } from '@/routes/password/confirm';
 import { Form, Head } from '@inertiajs/react';
 
-export default function ConfirmPassword() {
+export default function ConfirmPasswordPage() {
     return (
         <AuthLayout
             title="Confirm your password"
@@ -35,10 +33,10 @@ export default function ConfirmPassword() {
                         <div className="flex items-center">
                             <Button
                                 className="w-full"
-                                disabled={processing}
+                                isPending={processing}
+                                isDisabled={processing}
                                 data-test="confirm-password-button"
                             >
-                                {processing && <Spinner />}
                                 Confirm password
                             </Button>
                         </div>

@@ -4,11 +4,12 @@ namespace Database\Factories;
 
 use App\Enums\DeliveryWindow;
 use App\Models\Customer;
+use App\Models\DeliveryRequest;
 use App\Models\SalesOrder;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\DeliveryRequest>
+ * @extends Factory<DeliveryRequest>
  */
 class DeliveryRequestFactory extends Factory
 {

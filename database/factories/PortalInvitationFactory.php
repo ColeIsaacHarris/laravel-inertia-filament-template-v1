@@ -4,10 +4,11 @@ namespace Database\Factories;
 
 use App\Enums\PortalInvitationStatus;
 use App\Enums\PortalRole;
+use App\Models\PortalInvitation;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PortalInvitation>
+ * @extends Factory<PortalInvitation>
  */
 class PortalInvitationFactory extends Factory
 {

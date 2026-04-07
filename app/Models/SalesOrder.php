@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\PaymentTerms;
 use App\States\SalesOrder\SalesOrderState;
+use Database\Factories\SalesOrderFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +14,7 @@ use Spatie\ModelStates\HasStates;
 
 class SalesOrder extends Model
 {
-    /** @use HasFactory<\Database\Factories\SalesOrderFactory> */
+    /** @use HasFactory<SalesOrderFactory> */
     use HasFactory;
 
     use HasStates;

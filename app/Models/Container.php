@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\ContainerSize;
 use App\Enums\CustomsStatus;
 use App\States\Container\ContainerState;
+use Database\Factories\ContainerFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,7 @@ use Spatie\ModelStates\HasStates;
 
 class Container extends Model
 {
-    /** @use HasFactory<\Database\Factories\ContainerFactory> */
+    /** @use HasFactory<ContainerFactory> */
     use HasFactory;
 
     use HasStates;

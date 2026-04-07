@@ -3,10 +3,11 @@
 namespace Database\Factories;
 
 use App\Enums\DimensionStage;
+use App\Models\SlabDimension;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SlabDimension>
+ * @extends Factory<SlabDimension>
  */
 class SlabDimensionFactory extends Factory
 {

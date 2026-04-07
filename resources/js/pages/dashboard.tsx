@@ -1,7 +1,7 @@
-import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
-import AppLayout from '@/layouts/app-layout';
+import { PlaceholderPattern } from '@/common/components/placeholder-pattern';
+import type { BreadcrumbItem } from '@/common/types/navigation';
+import { AppLayout } from '@/modules/app-shell/layouts/app-layout';
 import { dashboard } from '@/routes';
-import type { BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -11,7 +11,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function Dashboard() {
+export default function DashboardPage() {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\ThreadType;
+use Database\Factories\MessageThreadFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class MessageThread extends Model
 {
-    /** @use HasFactory<\Database\Factories\MessageThreadFactory> */
+    /** @use HasFactory<MessageThreadFactory> */
     use HasFactory;
 
     use HasUuids;

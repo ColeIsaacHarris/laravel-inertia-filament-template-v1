@@ -4,10 +4,11 @@ namespace Database\Factories;
 
 use App\Enums\QualityGrade;
 use App\Enums\SlabFinish;
+use App\Models\Slab;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Slab>
+ * @extends Factory<Slab>
  */
 class SlabFactory extends Factory
 {

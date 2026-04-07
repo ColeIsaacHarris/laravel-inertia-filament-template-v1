@@ -3,11 +3,12 @@
 namespace Database\Factories;
 
 use App\Enums\PaymentTerms;
+use App\Models\PurchaseOrder;
 use App\Models\Supplier;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PurchaseOrder>
+ * @extends Factory<PurchaseOrder>
  */
 class PurchaseOrderFactory extends Factory
 {

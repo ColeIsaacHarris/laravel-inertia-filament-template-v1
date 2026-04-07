@@ -1,6 +1,9 @@
 <?php
 
 use App\Models\User;
+use Tests\Concerns\WithTenancy;
+
+uses(WithTenancy::class);
 
 test('guests are redirected to the login page', function () {
     $this->get(route('dashboard'))->assertRedirect(route('login'));

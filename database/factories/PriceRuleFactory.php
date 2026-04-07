@@ -4,10 +4,11 @@ namespace Database\Factories;
 
 use App\Enums\PricingModel;
 use App\Enums\PricingScope;
+use App\Models\PriceRule;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\PriceRule>
+ * @extends Factory<PriceRule>
  */
 class PriceRuleFactory extends Factory
 {

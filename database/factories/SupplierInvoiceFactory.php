@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\SupplierInvoice;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SupplierInvoice>
+ * @extends Factory<SupplierInvoice>
  */
 class SupplierInvoiceFactory extends Factory
 {

@@ -2,10 +2,11 @@
 
 namespace Database\Factories;
 
+use App\Models\CustomerInteraction;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\CustomerInteraction>
+ * @extends Factory<CustomerInteraction>
  */
 class CustomerInteractionFactory extends Factory
 {

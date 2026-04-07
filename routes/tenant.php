@@ -24,9 +24,16 @@ Route::middleware([
     Middleware\PreventAccessFromUnwantedDomains::class,
     Middleware\ScopeSessions::class,
 ])->group(function () {
-    // Route::get('/', function () {
-    //     return Inertia::render('welcome');
-    // });
+    Route::get('/', function () {
+        return Inertia::render('welcome');
+    })->name('home');
+
+    Route::middleware(['auth', 'verified'])->group(function () {
+        Route::inertia('dashboard', 'dashboard')->name('dashboard');
+    });
+
+    // Settings routes
+    require base_path('routes/settings.php');
 
     // Fortify auth routes (tenant context only)
     require base_path('vendor/laravel/fortify/routes/routes.php');

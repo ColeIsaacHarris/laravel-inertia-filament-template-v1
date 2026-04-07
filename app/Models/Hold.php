@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\DepositStatus;
 use App\Enums\HoldType;
 use App\States\Hold\HoldState;
+use Database\Factories\HoldFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,7 @@ use Spatie\ModelStates\HasStates;
 
 class Hold extends Model
 {
-    /** @use HasFactory<\Database\Factories\HoldFactory> */
+    /** @use HasFactory<HoldFactory> */
     use HasFactory;
 
     use HasStates;

@@ -1,0 +1,17 @@
+name: web-app
+icon: null
+processes:
+  Pint:
+    command: vendor/bin/pint --test
+    working_dir: null
+    auto_start: false
+    auto_restart: false
+    restart_when_changed: []
+    env: {}
+  Sail:
+    command: composer run dev
+    working_dir: null
+    auto_start: false
+    auto_restart: false
+    restart_when_changed: []
+    env: {}

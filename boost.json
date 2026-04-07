@@ -4,9 +4,19 @@
         "cursor",
         "copilot"
     ],
-    "guidelines": true,
+    "herd_mcp": false,
+    "mcp": true,
+    "nightwatch_mcp": false,
     "packages": [
-        "laravel/fortify",
-        "filament/filament"
+        "filament/filament",
+        "laravel/fortify"
+    ],
+    "sail": true,
+    "skills": [
+        "wayfinder-development",
+        "pest-testing",
+        "inertia-react-development",
+        "tailwindcss-development",
+        "fortify-development"
     ]
 }

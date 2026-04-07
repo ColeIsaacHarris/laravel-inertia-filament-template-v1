@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\MediaType;
+use Database\Factories\SlabMediaFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SlabMedia extends Model
 {
-    /** @use HasFactory<\Database\Factories\SlabMediaFactory> */
+    /** @use HasFactory<SlabMediaFactory> */
     use HasFactory;
 
     use HasUuids;

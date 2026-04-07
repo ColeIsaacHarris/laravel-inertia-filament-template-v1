@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\MovementType;
+use Database\Factories\InventoryMovementFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class InventoryMovement extends Model
 {
-    /** @use HasFactory<\Database\Factories\InventoryMovementFactory> */
+    /** @use HasFactory<InventoryMovementFactory> */
     use HasFactory;
 
     use HasUuids;

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\PaymentTerms;
 use App\States\Invoice\InvoiceState;
+use Database\Factories\InvoiceFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +14,7 @@ use Spatie\ModelStates\HasStates;
 
 class Invoice extends Model
 {
-    /** @use HasFactory<\Database\Factories\InvoiceFactory> */
+    /** @use HasFactory<InvoiceFactory> */
     use HasFactory;
 
     use HasStates;

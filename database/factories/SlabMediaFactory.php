@@ -3,10 +3,11 @@
 namespace Database\Factories;
 
 use App\Enums\MediaType;
+use App\Models\SlabMedia;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\SlabMedia>
+ * @extends Factory<SlabMedia>
  */
 class SlabMediaFactory extends Factory
 {

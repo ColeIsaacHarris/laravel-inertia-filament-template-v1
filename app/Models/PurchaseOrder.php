@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\ContainerSize;
 use App\Enums\PaymentTerms;
 use App\States\PurchaseOrder\PurchaseOrderState;
+use Database\Factories\PurchaseOrderFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,7 @@ use Spatie\ModelStates\HasStates;
 
 class PurchaseOrder extends Model
 {
-    /** @use HasFactory<\Database\Factories\PurchaseOrderFactory> */
+    /** @use HasFactory<PurchaseOrderFactory> */
     use HasFactory;
 
     use HasStates;

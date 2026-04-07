@@ -1,15 +1,13 @@
-import InputError from '@/components/input-error';
-import TextLink from '@/components/text-link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Spinner } from '@/components/ui/spinner';
-import AuthLayout from '@/layouts/auth-layout';
+import { Button } from '@/common/components/button';
+import { InputError } from '@/common/components/input-error';
+import { Input, Label } from '@/common/components/text-field';
+import { TextLink } from '@/common/components/text-link';
+import { AuthLayout } from '@/modules/auth/layouts/auth-layout';
 import { login } from '@/routes';
 import { store } from '@/routes/register';
 import { Form, Head } from '@inertiajs/react';
 
-export default function Register() {
+export default function RegisterPage() {
     return (
         <AuthLayout
             title="Create an account"
@@ -92,10 +90,10 @@ export default function Register() {
                             <Button
                                 type="submit"
                                 className="mt-2 w-full"
-                                tabIndex={5}
+                                isPending={processing}
+                                isDisabled={processing}
                                 data-test="register-user-button"
                             >
-                                {processing && <Spinner />}
                                 Create account
                             </Button>
                         </div>

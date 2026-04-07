@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\QualityGrade;
 use App\Enums\SlabFinish;
 use App\States\Slab\SlabState;
+use Database\Factories\SlabFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -15,7 +16,7 @@ use Spatie\ModelStates\HasStates;
 
 class Slab extends Model
 {
-    /** @use HasFactory<\Database\Factories\SlabFactory> */
+    /** @use HasFactory<SlabFactory> */
     use HasFactory;
 
     use HasStates;

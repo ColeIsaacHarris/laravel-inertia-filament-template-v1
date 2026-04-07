@@ -1,16 +1,13 @@
-// Components
-import InputError from '@/components/input-error';
-import TextLink from '@/components/text-link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import AuthLayout from '@/layouts/auth-layout';
+import { Button } from '@/common/components/button';
+import { InputError } from '@/common/components/input-error';
+import { Input, Label } from '@/common/components/text-field';
+import { TextLink } from '@/common/components/text-link';
+import { AuthLayout } from '@/modules/auth/layouts/auth-layout';
 import { login } from '@/routes';
 import { email } from '@/routes/password';
 import { Form, Head } from '@inertiajs/react';
-import { LoaderCircle } from 'lucide-react';
 
-export default function ForgotPassword({ status }: { status?: string }) {
+export default function ForgotPasswordPage({ status }: { status?: string }) {
     return (
         <AuthLayout
             title="Forgot password"
@@ -45,12 +42,10 @@ export default function ForgotPassword({ status }: { status?: string }) {
                             <div className="my-6 flex items-center justify-start">
                                 <Button
                                     className="w-full"
-                                    disabled={processing}
+                                    isPending={processing}
+                                    isDisabled={processing}
                                     data-test="email-password-reset-link-button"
                                 >
-                                    {processing && (
-                                        <LoaderCircle className="h-4 w-4 animate-spin" />
-                                    )}
                                     Email password reset link
                                 </Button>
                             </div>

@@ -1,5 +1,10 @@
 <?php
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\Concerns\WithSharedTenancy;
+use Tests\Concerns\WithTenancy;
+use Tests\TestCase;
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -11,9 +16,33 @@
 |
 */
 
-pest()->extend(Tests\TestCase::class)
-    ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
-    ->in('Feature');
+pest()->extend(TestCase::class)->in('Feature');
+
+/*
+|--------------------------------------------------------------------------
+| Central Tests — use RefreshDatabase for transaction-based isolation.
+|--------------------------------------------------------------------------
+*/
+
+uses(RefreshDatabase::class)->in('Feature/Filament');
+
+/*
+|--------------------------------------------------------------------------
+| Tenant Tests — use WithTenancy which runs migrate:fresh, creates a tenant
+| (with its database), and initializes tenancy before each test.
+|--------------------------------------------------------------------------
+*/
+
+uses(WithTenancy::class)->in('Feature/Auth', 'Feature/Settings');
+
+/*
+|--------------------------------------------------------------------------
+| State Tests — use WithSharedTenancy which creates the tenant once per
+| file and wraps each test in a transaction for fast isolation.
+|--------------------------------------------------------------------------
+*/
+
+uses(WithSharedTenancy::class)->in('Feature/States');
 
 /*
 |--------------------------------------------------------------------------

@@ -5,10 +5,11 @@ namespace Database\Factories;
 use App\Enums\CustomerTier;
 use App\Enums\CustomerType;
 use App\Enums\PaymentTerms;
+use App\Models\Customer;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Customer>
+ * @extends Factory<Customer>
  */
 class CustomerFactory extends Factory
 {

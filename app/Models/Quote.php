@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\PaymentTerms;
 use App\States\Quote\QuoteState;
+use Database\Factories\QuoteFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +14,7 @@ use Spatie\ModelStates\HasStates;
 
 class Quote extends Model
 {
-    /** @use HasFactory<\Database\Factories\QuoteFactory> */
+    /** @use HasFactory<QuoteFactory> */
     use HasFactory;
 
     use HasStates;

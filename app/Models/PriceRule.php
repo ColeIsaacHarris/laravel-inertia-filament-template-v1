@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\CustomerTier;
 use App\Enums\PricingModel;
 use App\Enums\PricingScope;
+use Database\Factories\PriceRuleFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PriceRule extends Model
 {
-    /** @use HasFactory<\Database\Factories\PriceRuleFactory> */
+    /** @use HasFactory<PriceRuleFactory> */
     use HasFactory;
 
     use HasUuids;

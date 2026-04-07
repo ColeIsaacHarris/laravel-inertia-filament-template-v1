@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\PortalInvitationStatus;
 use App\Enums\PortalRole;
+use Database\Factories\PortalInvitationFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class PortalInvitation extends Model
 {
-    /** @use HasFactory<\Database\Factories\PortalInvitationFactory> */
+    /** @use HasFactory<PortalInvitationFactory> */
     use HasFactory;
 
     use HasUuids;

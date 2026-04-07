@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\DeliveryWindow;
 use App\States\DeliveryRequest\DeliveryRequestState;
+use Database\Factories\DeliveryRequestFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +13,7 @@ use Spatie\ModelStates\HasStates;
 
 class DeliveryRequest extends Model
 {
-    /** @use HasFactory<\Database\Factories\DeliveryRequestFactory> */
+    /** @use HasFactory<DeliveryRequestFactory> */
     use HasFactory;
 
     use HasStates;

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Database\Factories\SupplierContactFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class SupplierContact extends Model
 {
-    /** @use HasFactory<\Database\Factories\SupplierContactFactory> */
+    /** @use HasFactory<SupplierContactFactory> */
     use HasFactory;
 
     use HasUuids;

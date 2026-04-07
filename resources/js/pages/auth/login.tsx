@@ -1,11 +1,9 @@
-import InputError from '@/components/input-error';
-import TextLink from '@/components/text-link';
-import { Button } from '@/components/ui/button';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Spinner } from '@/components/ui/spinner';
-import AuthLayout from '@/layouts/auth-layout';
+import { Button } from '@/common/components/button';
+import { Checkbox } from '@/common/components/checkbox';
+import { InputError } from '@/common/components/input-error';
+import { Input, Label } from '@/common/components/text-field';
+import { TextLink } from '@/common/components/text-link';
+import { AuthLayout } from '@/modules/auth/layouts/auth-layout';
 import { register } from '@/routes';
 import { store } from '@/routes/login';
 import { request } from '@/routes/password';
@@ -17,7 +15,7 @@ type Props = {
     canRegister: boolean;
 };
 
-export default function Login({
+export default function LoginPage({
     status,
     canResetPassword,
     canRegister,
@@ -77,23 +75,15 @@ export default function Login({
                                 <InputError message={errors.password} />
                             </div>
 
-                            <div className="flex items-center space-x-3">
-                                <Checkbox
-                                    id="remember"
-                                    name="remember"
-                                    tabIndex={3}
-                                />
-                                <Label htmlFor="remember">Remember me</Label>
-                            </div>
+                            <Checkbox name="remember" label="Remember me" />
 
                             <Button
                                 type="submit"
                                 className="mt-4 w-full"
-                                tabIndex={4}
-                                disabled={processing}
+                                isPending={processing}
+                                isDisabled={processing}
                                 data-test="login-button"
                             >
-                                {processing && <Spinner />}
                                 Log in
                             </Button>
                         </div>

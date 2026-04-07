@@ -199,7 +199,7 @@ class TenancyServiceProvider extends ServiceProvider
         FortifyRouteBootstrapper::$fortifyHome = null;
 
         $this->bootEvents();
-        // $this->mapRoutes();
+        $this->mapRoutes();
 
         $this->makeTenancyMiddlewareHighestPriority();
         $this->overrideUrlInTenantContext();

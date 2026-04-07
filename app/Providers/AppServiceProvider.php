@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Carbon\CarbonImmutable;
+use Filament\Support\Colors\Color;
+use Filament\Support\Facades\FilamentColor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +28,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureDefaults();
+
+        FilamentColor::register([
+            // 'primary' => Color::Teal,
+            // 'secondary' => Color::Teal,
+            // 'success' => Color::Teal,
+            // 'danger' => Color::Teal,
+            // 'warning' => Color::Teal,
+            // 'info' => Color::Teal,
+        ]);
 
         if (app()->environment('testing')) {
             $this->loadMigrationsFrom(database_path('migrations/tenant'));

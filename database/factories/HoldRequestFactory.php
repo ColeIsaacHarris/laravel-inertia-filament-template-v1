@@ -4,10 +4,11 @@ namespace Database\Factories;
 
 use App\Enums\HoldType;
 use App\Models\Customer;
+use App\Models\HoldRequest;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\HoldRequest>
+ * @extends Factory<HoldRequest>
  */
 class HoldRequestFactory extends Factory
 {
