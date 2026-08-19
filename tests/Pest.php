@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\Concerns\WithSharedTenancy;
 use Tests\Concerns\WithTenancy;
 use Tests\TestCase;
 
@@ -37,15 +36,6 @@ uses(WithTenancy::class)->in('Feature/Auth', 'Feature/Settings');
 
 /*
 |--------------------------------------------------------------------------
-| State Tests — use WithSharedTenancy which creates the tenant once per
-| file and wraps each test in a transaction for fast isolation.
-|--------------------------------------------------------------------------
-*/
-
-uses(WithSharedTenancy::class)->in('Feature/States');
-
-/*
-|--------------------------------------------------------------------------
 | Expectations
 |--------------------------------------------------------------------------
 |
@@ -69,8 +59,3 @@ expect()->extend('toBeOne', function () {
 | global functions to help you to reduce the number of lines of code in your test files.
 |
 */
-
-function something()
-{
-    // ..
-}

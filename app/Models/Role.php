@@ -15,10 +15,6 @@ class Role extends Model
 
     use HasUuids;
 
-    /** @var array<string> */
-    protected $fillable = [
-    ];
-
     /** @return array<string, string> */
     protected function casts(): array
     {

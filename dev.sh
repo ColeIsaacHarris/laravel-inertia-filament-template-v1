@@ -18,10 +18,12 @@ cleanup() {
 trap cleanup EXIT SIGTERM SIGINT SIGHUP
 
 echo "Starting Sail..."
-./vendor/bin/sail up -d
+# --wait blocks until the pgsql and redis healthchecks pass, so migrations and
+# the queue worker don't race the database coming up.
+./vendor/bin/sail up -d --wait
 
-echo "Waiting for Sail to be ready..."
-until ./vendor/bin/sail artisan --version > /dev/null 2>&1; do
+echo "Waiting for the application to be ready..."
+until ./vendor/bin/sail artisan db:show > /dev/null 2>&1; do
     sleep 1
 done
 

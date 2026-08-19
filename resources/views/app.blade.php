@@ -19,7 +19,8 @@
             })();
         </script>
 
-        {{-- Inline style to set the HTML background color based on our theme in app.css --}}
+        {{-- Inline style to set the HTML background color before the stylesheet loads.
+             These two values must stay in sync with --background in resources/css/app.css. --}}
         <style>
             html {
                 background-color: oklch(1 0 0);

@@ -60,28 +60,8 @@ class User extends Authenticatable
         return $this->hasMany(AuditLog::class);
     }
 
-    public function customers(): HasMany
-    {
-        return $this->hasMany(Customer::class, 'sales_rep_id');
-    }
-
-    public function holds(): HasMany
-    {
-        return $this->hasMany(Hold::class, 'created_by');
-    }
-
-    public function quotes(): HasMany
-    {
-        return $this->hasMany(Quote::class, 'sales_rep_id');
-    }
-
     public function role(): BelongsTo
     {
         return $this->belongsTo(Role::class);
-    }
-
-    public function salesOrders(): HasMany
-    {
-        return $this->hasMany(SalesOrder::class, 'sales_rep_id');
     }
 }

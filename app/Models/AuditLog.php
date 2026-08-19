@@ -19,10 +19,6 @@ class AuditLog extends Model
 
     protected $table = 'audit_log';
 
-    /** @var array<string> */
-    protected $fillable = [
-    ];
-
     /** @return array<string, string> */
     protected function casts(): array
     {

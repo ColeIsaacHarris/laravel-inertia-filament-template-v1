@@ -1,35 +1,39 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/react-starter-kit",
+    "name": "coleisaacharris/laravel-inertia-filament-template",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A multi-tenant Laravel starter template: Inertia + React, Filament admin panel, Fortify auth, and stancl/tenancy database-per-tenant.",
     "keywords": [
         "laravel",
-        "framework"
+        "inertia",
+        "react",
+        "filament",
+        "multi-tenancy",
+        "template",
+        "starter-kit"
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
-        "filament/filament": "^5.0",
-        "inertiajs/inertia-laravel": "^3.0.0-beta",
-        "laravel/fortify": "^1.30",
-        "laravel/framework": "^13.0",
-        "laravel/tinker": "^3.0",
-        "laravel/wayfinder": "^0.1.9",
-        "spatie/laravel-model-states": "^2.13",
+        "php": "^8.4",
+        "filament/filament": "^5.7",
+        "inertiajs/inertia-laravel": "^3.3",
+        "laravel/fortify": "^1.38",
+        "laravel/framework": "^13.26",
+        "laravel/tinker": "^3.0.2",
+        "laravel/wayfinder": "^0.1.21",
         "stancl/tenancy": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.7",
         "fakerphp/faker": "^1.23",
-        "laravel/boost": "^2.0",
-        "laravel/pail": "^1.2.2",
-        "laravel/pint": "^1.24",
-        "laravel/sail": "^1.41",
+        "laravel/boost": "^2.5",
+        "laravel/pail": "^1.2.7",
+        "laravel/pint": "^1.30",
+        "laravel/sail": "^1.67",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.6",
-        "pestphp/pest": "^4.3",
-        "pestphp/pest-plugin-laravel": "^4.0"
+        "nunomaduro/collision": "^8.9",
+        "pestphp/pest": "^5.1",
+        "pestphp/pest-plugin-laravel": "^5.0"
     },
     "autoload": {
         "psr-4": {
@@ -48,7 +52,6 @@
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
-            "@php artisan migrate --force",
             "npm install",
             "npm run build"
         ],
@@ -57,10 +60,6 @@
             "npx concurrently -k -c \"#93c5fd,#fdba74\" \"bash dev.sh\" \"npm run dev\" --names=server,vite"
         ],
         "local-dev": [
-            "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
-        ],
-        "dev:ssr": [
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
         ],
@@ -88,9 +87,7 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate --ansi",
-            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php artisan migrate --graceful --ansi"
+            "@php artisan key:generate --ansi"
         ],
         "pre-package-uninstall": [
             "Illuminate\\Foundation\\ComposerScripts::prePackageUninstall"

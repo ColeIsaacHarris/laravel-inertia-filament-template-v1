@@ -30,12 +30,8 @@ class AppServiceProvider extends ServiceProvider
         $this->configureDefaults();
 
         FilamentColor::register([
+            // Override any of Filament's semantic colors here, e.g.
             // 'primary' => Color::Teal,
-            // 'secondary' => Color::Teal,
-            // 'success' => Color::Teal,
-            // 'danger' => Color::Teal,
-            // 'warning' => Color::Teal,
-            // 'info' => Color::Teal,
         ]);
 
         if (app()->environment('testing')) {

@@ -41,18 +41,6 @@ export default [
         rules: {
             'import/no-named-as-default-member': 'off',
         },
-        // rules: {
-        //     'import/order': [
-        //         'error',
-        //         {
-        //             groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-        //             alphabetize: {
-        //                 order: 'asc',
-        //                 caseInsensitive: true,
-        //             },
-        //         },
-        //     ],
-        // },
     },
     {
         ...importPlugin.flatConfigs.typescript,
@@ -73,7 +61,6 @@ export default [
             'node_modules',
             'public',
             'bootstrap/ssr',
-            'tailwind.config.js',
             'vite.config.ts',
         ],
     },

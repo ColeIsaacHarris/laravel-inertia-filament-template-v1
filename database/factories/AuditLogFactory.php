@@ -19,7 +19,7 @@ class AuditLogFactory extends Factory
     {
         return [
             'action' => fake()->randomElement(['create', 'update', 'delete']),
-            'entity_type' => fake()->randomElement(['slab', 'customer', 'order']),
+            'entity_type' => fake()->randomElement(['App\\Models\\User', 'App\\Models\\Role']),
             'entity_id' => fake()->uuid(),
             'old_values' => [],
             'new_values' => ['field' => 'value'],
